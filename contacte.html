@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/contacte.css">
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Santa Margarida i els Monjos</h1>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="sobre_mi.html">Sobre-mi</a></li>
+        <li><a href="projectes.html">Projectes</a></li>
+        <li><a class="active" href="contacte.html">Contacta</a></li>
+      </ul>
+    </nav>
+    <article>
+      <h2>Formulari</h2>
+      <form action="gracies.html" method="post">
+
+        <fieldset>
+          <legend>Dades del client:</legend>
+          <label for="nom">Nom i cognoms: </label>
+          <input type="text" id="nom" name="nom" maxlength="50" size="50" required
+            placeholder="Escriu el teu nom i cognoms">
+
+          <label for="document">Document identitat:</label>
+          <input type="text" id="document" name="document" maxlength="9" size="20" required
+            pattern="^(?:[XYZ]|[0-9])[0-9]{7}[A-Z]$" title="Format NIE: X1234567L o 12345678A"
+            placeholder="Ex: X1234567L">
+
+          <label for="correu">Correu electrònic:</label>
+          <input type="email" id="correu" name="correu" maxlength="100" size="30" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,}$"
+            placeholder="nom@exemple.com">
+
+          <label for="contrasenya">Contrasenya:</label>
+          <input type="password" autocomplete="new-password" id="contrasenya" name="contrasenya" minlength="6"
+            maxlength="20" size="20" required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,20}$"
+            title="La contrasenya ha de tenir mínim 6 caràcters, incloent majúscules, minúscules i números"
+            placeholder="Introdueix la contrasenya">
+        </fieldset>
+        <fieldset>
+          <legend>Informació addicional:</legend>
+          <label for="tipusClient">Tipus de client: </label>
+          <div class="opcio-client">
+            <label><input type="radio" id="particular" name="tipusClient" value="particular" checked> Particular</label>
+            <label><input type="radio" id="empresa" name="tipusClient" value="empresa"> Empresa</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Imprescindible visitar: </legend>
+          <label for="lloc">Llocs: </label>
+          <select id="lloc" name="lloc" required>
+            <option value="">Selecciona un lloc</option>
+            <option value="esglesia">Església</option>
+            <option value="parc">Moli del vent</option>
+            <option value="museu">Margaridolla</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend for="menjar">Restauració: </legend>
+          <label for="menjar">Menjar: </label>
+          <select id="menjar" name="menjar" required>
+            <option value="">Selecciona un menjar</option>
+            <option value="truita">Truita de patata</option>
+            <option value="paella">Paella</option>
+            <option value="olives">Olives</option>
+          </select>
+        </fieldset>
+
+        <label class="condicio-label">
+          <input type="checkbox" id="condicio" name="condicio" value="acceptada" required>
+          Accepte les condicions
+        </label>
+        <br>
+        <button type="submit" action="gracies.html">Enviar</button>
+        <button type="reset">Reset</button>
+      </form>
+    </article>
+  </section>
+
+  <footer>
+    <p>by aleix</p>
+  </footer>
+
+</body>
+
+</html>
