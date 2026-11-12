@@ -19,7 +19,7 @@ header {
   text-align: center;
   font-size: 35px;
   color: white;
-  background-image: url("monjos.png");
+  background-image: url("Gunpla.png");
 }
 .row {
     display: flex;
@@ -85,7 +85,7 @@ section {
 /* Style the navigation menu */
 nav {
   flex: 0 0 auto;
-  background: #07c797;
+  background: rgb(158, 28, 197);
   padding: 20px;
 }
 
@@ -112,7 +112,7 @@ article {
 
 /* Style the footer */
 footer {
-  background-color: #0c9e92;
+  background-color: rgb(158, 28, 197);
   padding: 0,7px;
   text-align: center;
   color: white;
