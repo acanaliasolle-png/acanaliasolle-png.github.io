@@ -2,174 +2,361 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+  --color-ink: #30213d;
+  --color-muted: #62566d;
+  --color-accent: #27864a;
+  --color-accent-light: #e6f4e9;
+  --color-purple: #593578;
+  --color-purple-light: #f0e9f6;
+  --color-surface: #ffffff;
+  --color-page: #f7f4fa;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.gracies{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 50px;
-}
-/* Style the header */
 header {
-  background-size: cover;
+  padding: 48px 24px 54px;
+  background-image: linear-gradient(110deg, rgba(48, 29, 66, 0.94), rgba(89, 53, 120, 0.62)), url("Gunpla.png");
   background-position: center;
-  padding: 50px;
-  text-align: center;
-  font-size: 35px;
+  background-size: cover;
   color: white;
-  background-image: url("Gunpla.png");
+  text-align: left;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgb(115, 29, 141);
-  margin-left: auto;
+.site-eyebrow,
+.site-subtitle,
+header h1 {
+  width: min(100%, 1040px);
   margin-right: auto;
-  width: 50%;
+  margin-left: auto;
 }
 
-.flex {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-
-}
-
-article h1 {
-  grid-column: 1 / -1;
-}
-
-.column {
-  display: flex;
-  min-width: 0;
-  padding: 0.75%;
-}
-
-.column img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.site-eyebrow {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #bce7c7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
 }
 
 header h1 {
-  margin-top: 7.5vh;
-  font-size: 10vh;
-  text-shadow: 0.5vw 0.5vh #555555;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  text-shadow: none;
 }
 
-h2 {
-  color: white;
+.site-subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #f0e9f6;
+  font-size: 1.1rem;
 }
 
-p {
-  color: white;
-}
-
-/* Container for flexboxes */
-section {
-
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-/* Style the navigation menu */
 nav {
-
   flex: 0 0 auto;
-  background: rgb(158, 28, 197);
-  padding: 20px;
+  padding: 0 max(20px, calc((100% - 1040px) / 2));
+  background: var(--color-surface);
+  box-shadow: 0 2px 12px rgba(48, 33, 61, 0.08);
 }
 
-/* Style the list inside the menu */
 nav ul {
-  list-style-type: none;
-  padding: 0;
-  width: auto;
   display: flex;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0;
   flex-wrap: wrap;
+  list-style: none;
 }
 
 nav li {
   flex: 1 1 auto;
 }
 
-/* Style the content */
-article {
-  flex: 3;
-  background-color: #0a746b;
-  padding: 10px;
-  display: grid;
-}
-
-/* Style the footer */
-footer {
-  background-color: rgb(158, 28, 197);
-  padding: 0, 7px;
+nav li a {
+  display: block;
+  padding: 16px 12px;
+  border: 0;
+  color: #554663;
+  font-weight: 600;
   text-align: center;
-  color: white;
+  text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
+nav li a.active {
+  background: transparent;
+  color: var(--color-accent);
+  box-shadow: inset 0 -3px var(--color-accent);
+}
+
+nav li a:hover:not(.active),
+nav li a:focus-visible:not(.active) {
+  background: var(--color-purple-light);
+  color: var(--color-accent);
+}
+
+section {
+  flex: 1;
+}
+
+article {
+  width: min(calc(100% - 40px), 1040px);
+  margin: 32px auto;
+  padding: 28px;
+  border: 1px solid #e7deee;
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 30px rgba(48, 33, 61, 0.06);
+}
+
+article h2,
+.aficions-presentacio h2 {
+  margin-top: 0;
+  color: var(--color-ink);
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+p {
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.column {
+  min-width: 0;
+}
+
+.column img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.competencia-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.competencia-bloc {
+  padding: 22px;
+  border: 1px solid #e7deee;
+  border-radius: 12px;
+  background: #fcfaff;
+}
+
+.competencia-bloc h2 {
+  margin: 0 0 14px;
+  color: var(--color-ink);
+  font-size: 1.35rem;
+}
+
+.competencia-bloc p {
+  margin: 8px 0;
+}
+
+.llista-habilitats {
+  width: auto;
   margin: 0;
   padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  border: 1px solid #555555;
+  border: 0;
+  background: transparent;
+  list-style: none;
 }
 
-ol {
-  list-style-type: none;
+.llista-habilitats li {
+  padding: 8px 0 8px 22px;
+  color: var(--color-muted);
+  position: relative;
+}
+
+.llista-habilitats li::before {
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  content: "•";
+  font-size: 1.2rem;
+}
+
+.aficions-contingut {
+  flex: 1;
+  width: min(calc(100% - 40px), 1040px);
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.aficions-presentacio h2 {
+  margin: 8px 0;
+}
+
+.aficions-etiqueta-fosca {
   margin: 0;
-  padding: 4px 10px;
-  text-decoration: none;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.aficio-targeta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 620px;
+  margin-top: 32px;
+  padding: 28px;
+  border: 1px solid #e7deee;
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow: 0 12px 30px rgba(48, 33, 61, 0.08);
+}
+
+.aficio-icon {
+  display: grid;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  border-radius: 18px;
+  background: var(--color-accent-light);
+  font-size: 2.4rem;
+}
+
+.aficio-targeta .aficio-categoria {
+  margin: 0 0 6px;
+  color: var(--color-accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.aficio-targeta h3 {
+  margin: 0 0 8px;
+  color: var(--color-ink);
+  font-size: 1.5rem;
+}
+
+.aficio-targeta p:last-child {
+  margin: 0;
+}
+
+.projectes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 24px;
+  width: min(calc(100% - 40px), 1040px);
+  margin: 32px auto;
+}
+
+.projectes-grid article {
+  width: 100%;
+  margin: 0;
+}
+
+.projectes-grid .flex {
+  grid-template-columns: 1fr;
+}
+
+.projectes-grid .column img {
+  max-height: 280px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.gracies {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background-color: #04AA6D;
-  border: 1px solid #555555;
 }
 
+.gracies h2 {
+  margin-top: 0;
+}
 
-li a {
-  display: block;
-  color: black;
-  padding: 8px 16px;
-  text-decoration: none;
+.gracies a {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+footer {
+  padding: 12px 20px;
+  background: var(--color-ink);
   text-align: center;
-  border-bottom: 1px solid #555555;
 }
 
-li {
-  color: white;
+footer p {
+  margin: 8px 0;
+  color: #f0e9f6;
 }
 
-li:last-child {
-  border-bottom: none;
-}
-
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555555;
-  color: white;
-}
-
-/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
-  section {
-    flex-direction: column;
+  header {
+    padding: 40px 20px;
+  }
+
+  nav {
+    padding: 0 12px;
+  }
+
+  nav li {
+    flex: 1 1 30%;
+  }
+
+  nav li a {
+    padding: 12px 8px;
+  }
+
+  article {
+    width: calc(100% - 28px);
+    margin: 20px auto;
+    padding: 22px;
+  }
+
+  .flex,
+  .competencia-grid,
+  .projectes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectes-grid {
+    width: calc(100% - 28px);
+    margin: 20px auto;
+  }
+
+  .aficions-contingut {
+    width: calc(100% - 40px);
+    padding: 40px 0 56px;
+  }
+
+  .aficio-targeta {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .aficio-icon {
+    flex-basis: 60px;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
   }
 }
